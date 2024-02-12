@@ -16,21 +16,21 @@ public class ShipCostCalculator
         if(in.hasNextDouble()) { // if user gives a double than it's safe to read
             itemPrice = in.nextDouble();
             in.nextLine(); // Clear buffer
+            if (itemPrice <= 100) {
+                shipCost = itemPrice * SHIP_RATE;
+                totalCost = itemPrice + shipCost;
+                System.out.println("The price of shipping your item is " + shipCost);
+                System.out.println("The total price of your item with shipping is " + totalCost);
+            }
+            else {
+                System.out.println("The price of shipping your item is " + shipCost);
+                System.out.println("The total price of your item with shipping is " + itemPrice);
+            }
         }
         else {
             trash = in.nextLine();
             System.out.println("You said the price of your item was " + trash);
             System.out.println("Run the program again and enter a valid number");
-        }
-        if (itemPrice <= 100) {
-            shipCost = itemPrice * SHIP_RATE;
-            totalCost = itemPrice + shipCost;
-            System.out.println("The price of shipping your item is " + shipCost);
-            System.out.println("The total price of your item with shipping is " + totalCost);
-        }
-        else {
-            System.out.println("The price of shipping your item is " + shipCost);
-            System.out.println("The total price of your item with shipping is " + itemPrice);
         }
     }
 }
