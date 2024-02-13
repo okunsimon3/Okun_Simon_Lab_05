@@ -19,7 +19,7 @@ public class PartyAffiliation {
                 done = true;
             }
             else if(partyAffil.equalsIgnoreCase("I")){
-                System.out.println("You get an Independent Man");
+                System.out.println("You get an Independent Person");
                 done = true;
             }
             else {
